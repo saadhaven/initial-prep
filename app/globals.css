@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #0b1110;
+  --card: #121a17;
+  --primary: #4f7a5a;
+  --primary-hover: #628f6b;
+  --accent: #c6a15b;
+  --foreground: #f1f4f1;
+  --muted: #9aa69e;
+  --border: #26332d;
+  --correct: #3fa66b;
+  --wrong: #c95c5c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-accent: var(--accent);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-correct: var(--correct);
+  --color-wrong: var(--wrong);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--foreground);
+}
+
+.app-shell {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 79px,
+    rgb(241 244 241 / 1.2%) 80px
+  );
+}
