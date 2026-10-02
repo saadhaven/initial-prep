@@ -1,6 +1,6 @@
 import type { MCQ } from "./academic";
 
-type Academic2Row = [question: string, answer: string];
+type Academic2Row = [question: string, answer: string, reason?: string];
 
 const rows: Academic2Row[] = [
 	["In which year did Dr. Abdus Salam receive the Nobel Prize?", "1979"],
@@ -20,7 +20,7 @@ const rows: Academic2Row[] = [
 	["What is cos 180°?", "-1"],
 	["How many faces does a prism have?", "It depends on the base; an n-sided prism has n + 2 faces"],
 	["In which year did World War II begin?", "1939"],
-	["Which two countries joined the European Union in 2024?", "Croatia and Romania (as stated in the PDF)"],
+	["Which two countries became full members of the Schengen Area on 1 January 2025?", "Bulgaria and Romania", "Bulgaria and Romania became full Schengen members on 1 January 2025."],
 	["Which Latin American country stopped trade with Israel over Gaza?", "Brazil"],
 	["In which year were the Olympic Games cancelled because of World War I?", "1916"],
 	["What was Justice Bhagwan Das's religion?", "Hinduism"],
@@ -123,7 +123,8 @@ const rows: Academic2Row[] = [
 	["How many countries voted for a UN ceasefire resolution in Gaza, according to the PDF?", "121"],
 	["Who was listed as Punjab's Chief Minister for 2025 in the PDF?", "Mohsin Naqvi"],
 	["Who received the 2023 Nobel Prize in Physics, and for what?", "Pierre Agostini, Ferenc Krausz, and Anne L'Huillier, for attosecond light pulses"],
-	["Which country hosted COP30 in 2025, according to the PDF?", "United Arab Emirates"],
+	["Which country hosted COP30 in 2025?", "Brazil", "COP30 was held in Belém, Brazil, in November 2025."],
+
 	["Who founded YouTube?", "Steve Chen, Chad Hurley, and Jawed Karim"],
 	["Which app took a #FreePalestine stand in 2023, according to the PDF?", "Instagram"],
 	["What is 101/101 minus 1/101?", "100/101"],
@@ -143,12 +144,14 @@ const rows: Academic2Row[] = [
 	["Which Pakistani city is known as the City of Gardens?", "Lahore"],
 	["What is the currency of Egypt?", "Egyptian pound"],
 	["How many times had the USA vetoed UN Gaza ceasefire resolutions at the time described in the PDF?", "1"],
-	["Which country joined BRICS in 2024, according to the PDF?", "Argentina"],
+	["Which country declined an invitation to join BRICS in 2024?", "Argentina", "Argentina declined the invitation to join BRICS that took effect in 2024."],
+
 	["Who was Pakistan's Defence Minister named in the PDF?", "Khawaja Muhammad Asif"],
 	["Who was Pakistan's first President?", "Iskander Mirza"],
 	["Which company launched Vision Pro?", "Apple"],
 	["Which organization administers the West Bank, according to the PDF?", "PLO (Palestine Liberation Organization)"],
-	["What date is given as Pakistan Day in the PDF?", "14 August"],
+	["On what date is Pakistan Day observed?", "23 March", "Pakistan Day is observed on 23 March, commemorating the Lahore Resolution of 1940."],
+
 	["In which year did Governor-General Ghulam Muhammad dismiss Khawaja Nazimuddin?", "1953"],
 	["What is the closest meaning of 'synopsis'?", "Outline / abstract / brief / overview"],
 	["Which article of Pakistan's Constitution concerns freedom of speech?", "Article 19"],
@@ -170,7 +173,8 @@ const rows: Academic2Row[] = [
 	["Where is Wazir Khan Mosque?", "Lahore, Pakistan"],
 	["In which year did the Cripps Mission visit India?", "1942"],
 	["How many provinces were in India under the Government of India Act 1935?", "11"],
-	["Who acted as Chief Advisor of Bangladesh's government after Sheikh Hasina, according to the PDF?", "Dr. Fakhruddin Ahmed"],
+	["Who became Chief Adviser of Bangladesh's interim government after Sheikh Hasina resigned in 2024?", "Muhammad Yunus", "Muhammad Yunus was appointed Chief Adviser of Bangladesh's interim government in August 2024."],
+
 	["Where is NATO's headquarters?", "Brussels, Belgium"],
 	["Where is the IMF headquarters?", "Washington, D.C., USA"],
 	["Which country hosted the 2023 ICC Cricket World Cup?", "India"],
@@ -186,7 +190,8 @@ const rows: Academic2Row[] = [
 	["Where is the UN headquarters?", "New York, USA"],
 	["Where is Amnesty International's headquarters?", "London, United Kingdom"],
 	["Which country had the largest population in the world, according to the PDF?", "China"],
-	["Which country banned Quran burning in 2024, according to the PDF?", "Sweden"],
+	["Which country criminalized the public burning of religious texts in 2023?", "Denmark", "Denmark passed a law in December 2023 criminalizing the public desecration of religious texts."],
+
 	["Which element is liquid at room temperature?", "Mercury"],
 	["What is evaporation?", "The process by which liquid turns into vapour below its boiling point"],
 	["For what kind of matrix is a determinant not defined?", "A non-square matrix"],
@@ -228,7 +233,8 @@ const rows: Academic2Row[] = [
 	["What is Mongolia's currency?", "Mongolian tögrög"],
 	["How many faces does a triangular prism have?", "5"],
 	["Where is the IMF located?", "Washington, D.C., USA"],
-	["What did the ICJ order Israel to do in 2023, according to the PDF?", "Suspend military operations in Gaza and protect civilians"],
+	["What did the ICJ order Israel to do in its provisional measures concerning Gaza in January 2024?", "Take measures to prevent acts of genocide and enable humanitarian aid", "The ICJ's provisional measures required Israel to prevent acts covered by the Genocide Convention and enable humanitarian assistance; they did not order a general suspension of military operations."],
+
 	["Who wrote 'The Story of the Malakand Field Force'?", "Winston Churchill"],
 	["Which country hosted the 2023 G20 summit?", "India (New Delhi)"],
 	["When did Pakistan host the SCO Council of Foreign Ministers meeting?", "22–23 March 2022"],
@@ -241,7 +247,8 @@ const rows: Academic2Row[] = [
 	["Rafah Crossing connects Gaza with which country?", "Egypt"],
 	["Sultan Bahu wrote poetry in which language?", "Punjabi"],
 	["Who designed Pakistan's national flag?", "Syed Amir-uddin Kedwaii"],
-	["What did the ICJ order Israel to do in 2023, according to the PDF?", "Suspend military operations in Gaza and protect civilians"],
+	["What did the ICJ order Israel to do in its provisional measures concerning Gaza in January 2024?", "Take measures to prevent acts of genocide and enable humanitarian aid", "The ICJ's provisional measures required Israel to prevent acts covered by the Genocide Convention and enable humanitarian assistance; they did not order a general suspension of military operations."],
+
 	["Who was President of the USA during World War I?", "Woodrow Wilson"],
 	["When is Youm-e-Takbeer observed in Pakistan?", "28 May"],
 	["Kanpur Dam is built on which river, according to the PDF?", "Ganges"],
@@ -269,7 +276,8 @@ const rows: Academic2Row[] = [
 	["Why do parents send children to school?", "For learning and overall growth"],
 	["Which country repeatedly called for a Gaza ceasefire, according to the PDF?", "USA"],
 	["How many letters were exchanged between Gandhi and Jinnah, according to the PDF?", "10"],
-	["Who was the first woman Governor of Sindh, according to the PDF?", "Dr. Ishrat-ul-Ibad"],
+	["Who was the first woman Governor of Sindh?", "Begum Ra'ana Liaquat Ali Khan", "Begum Ra'ana Liaquat Ali Khan became the first woman Governor of Sindh in 1973."],
+
 	["What is a synonym of 'big'?", "Large"],
 	["What is an antonym of 'wild'?", "Tamed"],
 	["Who is Pakistan's highest Test cricket run-scorer?", "Younis Khan"],
@@ -287,7 +295,8 @@ const rows: Academic2Row[] = [
 	["Which three rivers did Pakistan receive under the Indus Waters Treaty?", "Indus, Jhelum, and Chenab"],
 	["What is an antonym of 'relinquish'?", "Retain"],
 	["What is an antonym of 'foremost'?", "Least"],
-	["Which African country was added to BRICS in 2024, according to the PDF?", "South Africa"],
+	["Which African country joined BRICS as a full member in 2024 alongside Egypt?", "Ethiopia", "Ethiopia became a BRICS member in January 2024; South Africa joined the group in 2011."],
+
 	["What is the administrative capital of Gilgit-Baltistan?", "Gilgit"],
 	["What is Mongolia's currency?", "Mongolian tögrög"],
 	["Where was COP28 held?", "United Arab Emirates (Dubai)"],
@@ -324,7 +333,7 @@ const rows: Academic2Row[] = [
 	["The Khyber Pass connects Pakistan to which country?", "Afghanistan"],
 	["What relationship do division and multiplication have?", "They are inverse operations"],
 	["Where is Gwadar Port located?", "Makran Division, Balochistan"],
-	["Who presented the idea of a separate homeland for Muslims and Hindus, according to the PDF?", "The India Act 1935"],
+	["Which law served as Pakistan's interim constitutional framework after independence?", "Government of India Act 1935", "Pakistan used the Government of India Act 1935, with amendments, as its interim constitutional framework after independence."],
 	["Who wrote the national anthem of Pakistan?", "Hafeez Jalandhri"],
 	["Who wrote the book 'Daughter of the East'?", "Benazir Bhutto"],
 	["In which game does 'love' mean zero?", "Tennis"],
@@ -342,15 +351,52 @@ const rows: Academic2Row[] = [
 	["Which country won the 2023 FIFA Women's World Cup?", "Spain"]
 ];
 
-const toMCQs = (sourceRows: Academic2Row[]): MCQ[] =>
-	sourceRows.map(([question, correctAnswer], index) => {
-		const options = [correctAnswer];
-		let offset = 1;
+type AnswerCategory = "country" | "person" | "year" | "capital" | "place" | "number" | "math" | "general";
 
-		while (options.length < 4) {
-			const distractor = sourceRows[(index + offset) % sourceRows.length][1];
-			if (!options.includes(distractor)) options.push(distractor);
+const categoryFor = (question: string): AnswerCategory => {
+	const normalized = question.toLowerCase();
+	if (/\b(cos|sin|tan|triangle|matrix|quadratic|angle|determinant|eccentricity|straight line|roots)\b/.test(normalized)) return "math";
+	if (/\bcapital\b/.test(normalized)) return "capital";
+	if (/\b(which|what) countr(?:y|ies)\b/.test(normalized)) return "country";
+	if (/^who\b/.test(normalized)) return "person";
+	if (/\bwhich year\b|^when\b/.test(normalized)) return "year";
+	if (/^how many\b|^how much\b|\bhow many\b/.test(normalized)) return "number";
+	if (/^where\b|\bwhich (city|province|river|sea|mountain range|island)\b/.test(normalized)) return "place";
+	return "general";
+};
+
+const answerCategory = (answer: string): AnswerCategory => {
+	if (/\b(19|20)\d{2}\b/.test(answer)) return "year";
+	if (/^\d+(?:[.,]\d+)?(?:\s*%|\s*°|\s*(?:km|kilometres?|years?|minutes?))?$/i.test(answer)) return "number";
+	return "general";
+};
+
+const toMCQs = (sourceRows: Academic2Row[]): MCQ[] => {
+	const categorizedRows = sourceRows.map((row) => ({ row, category: categoryFor(row[0]) }));
+
+	return sourceRows.map(([question, correctAnswer, reason], index) => {
+		const category = categoryFor(question);
+		const matchingAnswers = categorizedRows
+			.filter(({ row, category: rowCategory }) => rowCategory === category && row[1].toLowerCase() !== correctAnswer.toLowerCase())
+			.map(({ row }) => row[1]);
+		const simpleMatchingAnswers = matchingAnswers.filter((answer) => !/[;,()]|\b(?:and|or)\b/i.test(answer));
+		const typedAnswers = categorizedRows
+			.filter(({ row }) => answerCategory(row[1]) === answerCategory(correctAnswer) && row[1].toLowerCase() !== correctAnswer.toLowerCase())
+			.map(({ row }) => row[1]);
+		const candidateAnswers = [...new Set(simpleMatchingAnswers.length >= 3 ? simpleMatchingAnswers : [...simpleMatchingAnswers, ...typedAnswers])];
+		const options = [correctAnswer];
+		let offset = 0;
+
+		while (options.length < 4 && offset < candidateAnswers.length * 2) {
+			const distractor = candidateAnswers[(index + offset) % candidateAnswers.length];
+			if (distractor && !options.some((option) => option.toLowerCase() === distractor.toLowerCase())) options.push(distractor);
 			offset += 1;
+		}
+
+		for (const { row } of categorizedRows) {
+			if (options.length === 4) break;
+			const distractor = row[1];
+			if (!options.some((option) => option.toLowerCase() === distractor.toLowerCase())) options.push(distractor);
 		}
 
 		const answerPosition = index % 4;
@@ -360,8 +406,9 @@ const toMCQs = (sourceRows: Academic2Row[]): MCQ[] =>
 			question,
 			options: options as MCQ["options"],
 			correctAnswer,
-			reason: `The PDF answer key lists ${correctAnswer} as the answer.`
+			reason: reason ?? `The PDF answer key lists ${correctAnswer} as the answer.`
 		};
 	});
+};
 
 export const mcqsArray1: MCQ[] = toMCQs(rows);
