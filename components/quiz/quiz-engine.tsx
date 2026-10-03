@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { QuizOption } from "@/lib/quiz-types";
@@ -37,83 +37,11 @@ export function QuizEngine({ module, testType }: QuizEngineProps) {
   const [remainingSeconds, setRemainingSeconds] = useState(durationSeconds);
   const expirationHandled = useRef(false);
   const submittedRef = useRef(false);
-  const submitTestRef = useRef<() => void>(() => undefined);
   const questions = module.questions;
   const currentQuestion = questions[currentIndex];
   const unansweredCount = questions.length - Object.keys(answers).length;
 
-  useEffect(() => {
-    submitTestRef.current = submitTest;
-  });
-
-  useEffect(() => {
-    if (submitted) return;
-
-    expirationHandled.current = false;
-    const now = Date.now();
-    let deadline: number;
-
-    try {
-      const savedDeadline = Number(window.sessionStorage.getItem(timerKey));
-      if (Number.isFinite(savedDeadline) && savedDeadline > 0) {
-        deadline = savedDeadline;
-      } else {
-        deadline = now + durationSeconds * 1000;
-        window.sessionStorage.setItem(timerKey, String(deadline));
-      }
-    } catch {
-      deadline = now + durationSeconds * 1000;
-    }
-
-    function updateTimer() {
-      const remaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
-      setRemainingSeconds(remaining);
-
-      if (remaining === 0 && !expirationHandled.current) {
-        expirationHandled.current = true;
-        submitTestRef.current();
-      }
-    }
-
-    updateTimer();
-    const interval = window.setInterval(updateTimer, 1000);
-    return () => window.clearInterval(interval);
-  }, [durationSeconds, submitted, timerKey]);
-
-  useEffect(() => {
-    function handleKeyDown(event: KeyboardEvent) {
-      if (
-        event.key !== "Enter" ||
-        event.repeat ||
-        event.isComposing ||
-        showSubmitDialog ||
-        submitted
-      ) return;
-
-      const target = event.target;
-      if (
-        target instanceof HTMLElement &&
-        target.closest('button:not([disabled]), a[href], input, textarea, select, [role="dialog"]')
-      ) return;
-
-      event.preventDefault();
-      if (currentIndex === questions.length - 1) {
-        setShowSubmitDialog(true);
-      } else {
-        setCurrentIndex((index) => Math.min(questions.length - 1, index + 1));
-      }
-    }
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex, questions.length, showSubmitDialog, submitted]);
-
-  function selectAnswer(option: QuizOption) {
-    if (!currentQuestion) return;
-    writeQuizAnswers(answersKey, { ...answers, [currentQuestion.id]: option.id });
-  }
-
-  function submitTest() {
+  const submitTest = useCallback(() => {
     if (submittedRef.current) return;
     submittedRef.current = true;
 
@@ -146,6 +74,73 @@ export function QuizEngine({ module, testType }: QuizEngineProps) {
       setShowSubmitDialog(false);
       setSubmitted(true);
     }
+  }, [answers, durationSeconds, module.id, module.order, questions, router, testType.id, timerKey]);
+
+  useEffect(() => {
+    if (submitted) return;
+
+    expirationHandled.current = false;
+    const now = Date.now();
+    let deadline: number;
+
+    try {
+      const savedDeadline = Number(window.sessionStorage.getItem(timerKey));
+      if (Number.isFinite(savedDeadline) && savedDeadline > 0) {
+        deadline = savedDeadline;
+      } else {
+        deadline = now + durationSeconds * 1000;
+        window.sessionStorage.setItem(timerKey, String(deadline));
+      }
+    } catch {
+      deadline = now + durationSeconds * 1000;
+    }
+
+    function updateTimer() {
+      const remaining = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+      setRemainingSeconds(remaining);
+
+      if (remaining === 0 && !expirationHandled.current) {
+        expirationHandled.current = true;
+        submitTest();
+      }
+    }
+
+    updateTimer();
+    const interval = window.setInterval(updateTimer, 1000);
+    return () => window.clearInterval(interval);
+  }, [durationSeconds, submitTest, submitted, timerKey]);
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (
+        event.key !== "Enter" ||
+        event.repeat ||
+        event.isComposing ||
+        showSubmitDialog ||
+        submitted
+      ) return;
+
+      const target = event.target;
+      if (
+        target instanceof HTMLElement &&
+        target.closest('button:not([disabled]), a[href], input, textarea, select, [role="dialog"]')
+      ) return;
+
+      event.preventDefault();
+      if (currentIndex === questions.length - 1) {
+        submitTest();
+      } else {
+        setCurrentIndex((index) => Math.min(questions.length - 1, index + 1));
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex, questions.length, showSubmitDialog, submitTest, submitted]);
+
+  function selectAnswer(option: QuizOption) {
+    if (!currentQuestion) return;
+    writeQuizAnswers(answersKey, { ...answers, [currentQuestion.id]: option.id });
   }
 
   if (questions.length === 0) {
@@ -196,9 +191,9 @@ export function QuizEngine({ module, testType }: QuizEngineProps) {
           />
           <div className="mt-4 flex justify-end">
             <Button onClick={() => currentIndex === questions.length - 1
-              ? setShowSubmitDialog(true)
+              ? submitTest()
               : setCurrentIndex((index) => Math.min(questions.length - 1, index + 1))}>
-              {currentIndex === questions.length - 1 ? "Submit test" : "Next"}
+              {currentIndex === questions.length - 1 ? "Submit" : "Next"}
             </Button>
           </div>
         </div>

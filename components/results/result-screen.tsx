@@ -6,7 +6,7 @@ import { formatQuizTime } from "@/components/quiz/timer";
 import { useSavedAttempt } from "@/components/results/use-saved-attempt";
 import { Badge, buttonClassName, Card, Progress } from "@/components/ui";
 import { PASSING_SCORE_PERCENTAGE } from "@/config/test-types";
-import type { QuizModule } from "@/lib/modules";
+import { getModules, type QuizModule } from "@/lib/modules";
 import { calculateQuizResult } from "@/lib/quiz-results";
 import type { TestTypeConfig } from "@/config/test-types";
 
@@ -21,6 +21,7 @@ export function ResultScreen({ module, testType }: ResultScreenProps) {
 
   const result = attempt ? calculateQuizResult(module.questions, attempt) : null;
   const passed = result?.scorePercentage !== null && result?.scorePercentage !== undefined && result.scorePercentage >= PASSING_SCORE_PERCENTAGE;
+  const nextModule = getModules(testType).find((candidate) => candidate.order === module.order + 1 && candidate.available);
 
   return (
     <div className="app-shell min-h-screen">
@@ -77,6 +78,11 @@ export function ResultScreen({ module, testType }: ResultScreenProps) {
               {result.isScored && (
                 <Link className={buttonClassName({ variant: "secondary" })} href={`/quiz/${testType.id}/${module.order}/review?filter=wrong`}>
                   Review wrong questions
+                </Link>
+              )}
+              {nextModule && (
+                <Link className={buttonClassName({ variant: "success" })} href={`/quiz/${testType.id}/${nextModule.order}`}>
+                  Next module
                 </Link>
               )}
               <Link className={buttonClassName({ variant: "quiet" })} href={`/tests/${testType.id}`}>

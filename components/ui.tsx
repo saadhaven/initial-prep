@@ -9,13 +9,14 @@ export function Card({ as: Element = "div", className = "", ...props }: CardProp
 }
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary" | "secondary" | "quiet";
+  variant?: "primary" | "secondary" | "success" | "quiet";
   size?: "default" | "small";
 };
 
 const buttonVariants = {
   primary: "border-primary bg-primary text-foreground hover:border-primary-hover hover:bg-primary-hover",
   secondary: "border-border bg-card text-foreground hover:border-muted hover:bg-card/80",
+  success: "border-correct bg-correct/15 text-foreground hover:border-correct hover:bg-correct/25",
   quiet: "border-transparent bg-transparent text-muted hover:bg-card hover:text-foreground",
 };
 

@@ -1169,9 +1169,9 @@ export const mcqsArray4: MCQ[] = [
     },
     {
         question: "Muhammad (P.B.U.H) migrated to Madina in?",
-        options: ["13 nabvi, 622 AD","13th nabvi","13 nabvi 622","622 A D"],
-        correctAnswer: "13th nabvi",
-        reason: "The source PDF lists 13th nabvi as the answer."
+        options: ["622 CE","622 CE","622 CE","622 A D"],
+        correctAnswer: "622 CE",
+        reason: "The source PDF lists 622 CE as the answer."
     },
     {
         question: "Bolan Pass is between?",
@@ -1226,7 +1226,7 @@ export const mcqsArray5: MCQ[] = [
     },
     {
         question: "First Person who received Nishan-e-Haider?",
-        options: ["Havaldar lalak Jan, karnal sher khan","15 July 1999 - Cargill War, Havaldar Lalak Jan,","Captain Raja Sarwar","Neil Armstrong"],
+        options: ["Havaldar Lalak Jan","Major Shabbir Sharif","Captain Raja Sarwar","Neil Armstrong"],
         correctAnswer: "Captain Raja Sarwar",
         reason: "The source PDF lists Captain Raja Sarwar as the answer."
     },
@@ -1781,7 +1781,7 @@ export const mcqsArray6: MCQ[] = [
     },
     {
         question: "When Hazrat Muhammad SAW migrate to Madina who accompanied him?",
-        options: ["Wife","13th nabvi","Hazrat Abu Bakr","Fatima"],
+        options: ["Wife","622 CE","Hazrat Abu Bakr","Fatima"],
         correctAnswer: "Hazrat Abu Bakr",
         reason: "The source PDF lists Hazrat Abu Bakr as the answer."
     },
@@ -1868,7 +1868,7 @@ export const mcqsArray7: MCQ[] = [
     },
     {
         question: "Muwakhat e Madina kin do ka beech me hoi?",
-        options: ["Ansaar & Mahajir","Yasrab","622 Hijri","13th nabvi"],
+        options: ["Ansaar & Mahajir","Yasrab","622 Hijri","622 CE"],
         correctAnswer: "Ansaar & Mahajir",
         reason: "The source PDF lists Ansaar & Mahajir as the answer."
     },
@@ -3382,10 +3382,10 @@ export const mcqsArray12: MCQ[] = [
         reason: "The source PDF lists Bazaan ibne sasaan as the answer."
     },
     {
-        question: "Who wrote loyal muhammadian?",
-        options: ["Sir Sy d Ahmed Khan","37 plays and 154 sonnets.","Sir Syed Ahmed khan","Stanley Wolpert"],
-        correctAnswer: "Sir Syed Ahmed khan",
-        reason: "The source PDF lists Sir Syed Ahmed khan as the answer."
+        question: "Who is associated with the historical work 'Loyal Muhammadan'?",
+        options: ["Sir Syed Ahmed Khan","Allama Iqbal","Muhammad Ali Jinnah","Chaudhry Rahmat Ali"],
+        correctAnswer: "Sir Syed Ahmed Khan",
+        reason: "Sir Syed Ahmed Khan is associated with the reformist and educational movements that shaped modern Muslim political thought in British India."
     },
     {
         question: "Which companion was awarded the title 'Saifullah' (Sword of Allah) by Prophet Muhammad (PBUH)?",
@@ -3394,10 +3394,10 @@ export const mcqsArray12: MCQ[] = [
         reason: "Khalid ibn al-Walid was given the title Saifullah after the Battle of Mu'tah."
     },
     {
-        question: "1999 Nishan e Haider holder.",
-        options: ["Havaldar lalak Jan, karnal sher khan","Captain Raja Sarwar","15 July 1999 - Cargill War, Havaldar Lalak Jan,","Australia .2003.2007.1987"],
-        correctAnswer: "Havaldar lalak Jan, karnal sher khan",
-        reason: "The source PDF lists Havaldar lalak Jan, karnal sher khan as the answer."
+        question: "Who was awarded Nishan-e-Haider in 1999?",
+        options: ["Havaldar Lalak Jan","Captain Raja Sarwar","Major Shabbir Sharif","Major Aziz Bhatti"],
+        correctAnswer: "Havaldar Lalak Jan",
+        reason: "Havaldar Lalak Jan was awarded Nishan-e-Haider for his gallantry during the Kargil conflict in 1999."
     },
     {
         question: "Who was the fourth Caliph of Islam?",
@@ -3418,16 +3418,16 @@ export const mcqsArray12: MCQ[] = [
         reason: "Sultan Mahmud of Ghazni conducted 17 invasions of the Indian subcontinent between 1000 and 1027 CE."
     },
     {
-        question: "When did prophet migrated to Madina?",
-        options: ["13 nabvi, 622 AD","13 nabvi 622","622 A D","13th nabvi"],
-        correctAnswer: "13 nabvi, 622 AD",
-        reason: "The source PDF lists 13 nabvi, 622 AD as the answer."
+        question: "In which year did the Migration (Hijrah) from Makkah to Madinah occur?",
+        options: ["619 CE","622 CE","625 CE","630 CE"],
+        correctAnswer: "622 CE",
+        reason: "The migration to Madinah took place in 622 CE, the beginning of the Islamic calendar."
     },
     {
-        question: "Rohtas fort is near?",
-        options: ["Peshawar","Jhelum","Raincoat fort in thatha","Ranikot"],
+        question: "Rohtas Fort is located near which city?",
+        options: ["Peshawar","Jhelum","Rawalpindi","Multan"],
         correctAnswer: "Jhelum",
-        reason: "The source PDF lists Jhelum as the answer."
+        reason: "Rohtas Fort stands near Jhelum in Punjab, Pakistan."
     },
     {
         question: "Which Pakistani woman and man climbed Mount Everest first?",
@@ -3605,7 +3605,7 @@ export const mcqsArray12: MCQ[] = [
     },
     {
         question: "Holy prophet lived in Madina for how many years?",
-        options: ["622 A D","years. 10","13 nabvi 622 AD","10 years"],
+        options: ["622 A D","years. 10","622 CE AD","10 years"],
         correctAnswer: "10 years",
         reason: "The source PDF lists 10 years as the answer."
     },
@@ -3692,7 +3692,7 @@ export const mcqsArray13: MCQ[] = [
     },
     {
         question: "India of My dream is written by?",
-        options: ["Allama Iqbal","Gandhi","Sir Sy d Ahmed Khan","Sir Syed Ahmed khan"],
+        options: ["Allama Iqbal","Gandhi","Sir Syed Ahmed Khan","Sir Syed Ahmed Khan"],
         correctAnswer: "Gandhi",
         reason: "The source PDF lists Gandhi as the answer."
     },
@@ -4460,7 +4460,7 @@ export const mcqsArray15: MCQ[] = [
     },
     {
         question: "Jinnah vision of Pakistan book written by?",
-        options: ["S Mahmoud","Sir Syed Ahmed khan","Gabriel Almond","Kalevi jaako holsti"],
+        options: ["S Mahmoud","Sir Syed Ahmed Khan","Gabriel Almond","Kalevi jaako holsti"],
         correctAnswer: "S Mahmoud",
         reason: "The source PDF lists S Mahmoud as the answer."
     },
@@ -4508,7 +4508,7 @@ export const mcqsArray15: MCQ[] = [
     },
     {
         question: "A discipline divided book written by?",
-        options: ["Gabriel Almond","Kalevi jaako holsti","Roman Lewis","Sir Syed Ahmed khan"],
+        options: ["Gabriel Almond","Kalevi jaako holsti","Roman Lewis","Sir Syed Ahmed Khan"],
         correctAnswer: "Gabriel Almond",
         reason: "The source PDF lists Gabriel Almond as the answer."
     },
@@ -4589,9 +4589,9 @@ export const mcqsArray16: MCQ[] = [
     },
     {
         question: "When holy prophet 1st journey to Madina?",
-        options: ["622 A D","13 nabvi 622 AD","10 years","571AD"],
-        correctAnswer: "13 nabvi 622 AD",
-        reason: "The source PDF lists 13 nabvi 622 AD as the answer."
+        options: ["622 A D","622 CE AD","10 years","571AD"],
+        correctAnswer: "622 CE AD",
+        reason: "The source PDF lists 622 CE AD as the answer."
     },
     {
         question: "Multiplicative identity of complex number?",
@@ -4775,7 +4775,7 @@ export const mcqsArray16: MCQ[] = [
     },
     {
         question: "Nanga par bat is in?",
-        options: ["Himalaya’s","9 Th","38 inches","Sir Syed Ahmed khan"],
+        options: ["Himalaya’s","9 Th","38 inches","Sir Syed Ahmed Khan"],
         correctAnswer: "Himalaya’s",
         reason: "The source PDF lists Himalaya’s as the answer."
     },
@@ -4787,7 +4787,7 @@ export const mcqsArray16: MCQ[] = [
     },
     {
         question: "Fort Minru Lake is in?",
-        options: ["Manchar","Raincoat fort in thatha","Dera Ghazi Khan","Ranikot"],
+        options: ["Manchar","Ranikot Fort","Dera Ghazi Khan","Ranikot"],
         correctAnswer: "Dera Ghazi Khan",
         reason: "The source PDF lists Dera Ghazi Khan as the answer."
     },
@@ -5176,10 +5176,10 @@ export const mcqsArray18: MCQ[] = [
         reason: "Tawrat was revealed to Prophet Musa (AS)."
     },
     {
-        question: "Prophet SAW migrated to Madina in?",
-        options: ["13 nabvi, 622 AD","622 A D","13 nabvi 622","13th nabvi"],
-        correctAnswer: "13 nabvi 622",
-        reason: "The source PDF lists 13 nabvi 622 as the answer."
+        question: "In which year did the Prophet Muhammad (PBUH) migrate to Madinah?",
+        options: ["619 CE","622 CE","625 CE","628 CE"],
+        correctAnswer: "622 CE",
+        reason: "The Hijrah to Madinah occurred in 622 CE, which marked the beginning of the Islamic calendar."
     },
     {
         question: "River Jhelum and Chenab meet on?",
@@ -5188,10 +5188,10 @@ export const mcqsArray18: MCQ[] = [
         reason: "The source PDF lists Trimmu, muzaffar garh as the answer."
     },
     {
-        question: "Largest fort of Pakistan?",
-        options: ["Raincoat fort in thatha","Ranikot","Hyderabad","Constructed in 1648 by the fifth Mughal Emperor Shah Jahan"],
-        correctAnswer: "Raincoat fort in thatha",
-        reason: "The source PDF lists Raincoat fort in thatha as the answer."
+        question: "Which is the largest fort in Pakistan?",
+        options: ["Ranikot Fort","Rohtas Fort","Khanpur Fort","Shahi Qila Lahore"],
+        correctAnswer: "Ranikot Fort",
+        reason: "Ranikot Fort in Sindh is widely recognized as the largest fort in Pakistan by area."
     },
     {
         question: "Where is the tomb of Emperor Jahangir located?",
@@ -5261,13 +5261,13 @@ export const mcqsArray18: MCQ[] = [
     },
     {
         question: "The dividing discipline book written by?",
-        options: ["Kalevi jaako holsti","Gabriel Almond","Roman Lewis","Sir Syed Ahmed khan"],
+        options: ["Kalevi jaako holsti","Gabriel Almond","Roman Lewis","Sir Syed Ahmed Khan"],
         correctAnswer: "Kalevi jaako holsti",
         reason: "The source PDF lists Kalevi jaako holsti as the answer."
     },
     {
         question: "The discipline dilemma book written by?",
-        options: ["Gabriel Almond","Roman Lewis","Kalevi jaako holsti","Sir Syed Ahmed khan"],
+        options: ["Gabriel Almond","Roman Lewis","Kalevi jaako holsti","Sir Syed Ahmed Khan"],
         correctAnswer: "Roman Lewis",
         reason: "The source PDF lists Roman Lewis as the answer."
     },
@@ -5405,7 +5405,7 @@ export const mcqsArray18: MCQ[] = [
     },
     {
         question: "First Muslims migrated towards?",
-        options: ["Abyssinia","13th nabvi","13 nabvi, 622 AD","313"],
+        options: ["Abyssinia","622 CE","622 CE","313"],
         correctAnswer: "Abyssinia",
         reason: "The source PDF lists Abyssinia as the answer."
     },
@@ -5624,7 +5624,7 @@ export const mcqsArray19: MCQ[] = [
     },
     {
         question: "Hayat e jaw aid is written by?",
-        options: ["Altaf Hussain hali","Gandhi","Allama Iqbal","Sir Sy d Ahmed Khan"],
+        options: ["Altaf Hussain hali","Gandhi","Allama Iqbal","Sir Syed Ahmed Khan"],
         correctAnswer: "Altaf Hussain hali",
         reason: "The source PDF lists Altaf Hussain hali as the answer."
     },
@@ -5660,7 +5660,7 @@ export const mcqsArray19: MCQ[] = [
     },
     {
         question: "Daughter of Usman and wife of prophet saw?",
-        options: ["Umme Hakim Binte Mutalib","A.1.Khadija 2.Sowda 3.Aisha 4.Hafsha 5.Zainab Binte khuzayma 6.Salma 7.Zainab Binte jahsh","Hafsah RA","13 nabvi 622"],
+        options: ["Umme Hakim Binte Mutalib","A.1.Khadija 2.Sowda 3.Aisha 4.Hafsha 5.Zainab Binte khuzayma 6.Salma 7.Zainab Binte jahsh","Hafsah RA","622 CE"],
         correctAnswer: "Hafsah RA",
         reason: "The source PDF lists Hafsah RA as the answer."
     },
@@ -5672,7 +5672,7 @@ export const mcqsArray19: MCQ[] = [
     },
     {
         question: "Construction of religious boundaries book written by?",
-        options: ["Harjot Oberio","Sir Syed Ahmed khan","S Mahmoud","Gabriel Almond"],
+        options: ["Harjot Oberio","Sir Syed Ahmed Khan","S Mahmoud","Gabriel Almond"],
         correctAnswer: "Harjot Oberio",
         reason: "The source PDF lists Harjot Oberio as the answer."
     },
@@ -6047,7 +6047,7 @@ export const mcqsArray20: MCQ[] = [
     },
     {
         question: "Age of prophet SAW in jang e juffar?",
-        options: ["Umme Hakim Binte Mutalib","13 nabvi 622","15 years","15"],
+        options: ["Umme Hakim Binte Mutalib","622 CE","15 years","15"],
         correctAnswer: "15 years",
         reason: "The source PDF lists 15 years as the answer."
     },
@@ -6371,9 +6371,9 @@ export const mcqsArray21: MCQ[] = [
 export const mcqsArray22: MCQ[] = [
     {
         question: "Loyal muhammadian written by?",
-        options: ["Sir Syed Ahmed khan","Gandhi","Allama Iqbal","Sir Sy d Ahmed Khan"],
-        correctAnswer: "Sir Sy d Ahmed Khan",
-        reason: "The source PDF lists Sir Sy d Ahmed Khan as the answer."
+        options: ["Sir Syed Ahmed Khan","Gandhi","Allama Iqbal","Sir Syed Ahmed Khan"],
+        correctAnswer: "Sir Syed Ahmed Khan",
+        reason: "The source PDF lists Sir Syed Ahmed Khan as the answer."
     },
     {
         question: "Which gland is commonly called the master gland?",
@@ -6581,7 +6581,7 @@ export const mcqsArray22: MCQ[] = [
     },
     {
         question: "Pakistan largest fort?",
-        options: ["Raincoat fort in thatha","Hyderabad","Ranikot","Constructed in 1648 by the fifth Mughal Emperor Shah Jahan"],
+        options: ["Ranikot Fort","Hyderabad","Ranikot","Constructed in 1648 by the fifth Mughal Emperor Shah Jahan"],
         correctAnswer: "Ranikot",
         reason: "The source PDF lists Ranikot as the answer."
     },
@@ -7085,9 +7085,9 @@ export const mcqsArray24: MCQ[] = [
     },
     {
         question: "Loyal muhammadian written by?",
-        options: ["Sir Sy d Ahmed Khan","Sir Syed Ahmed khan","Gandhi","Allama Iqbal"],
-        correctAnswer: "Sir Syed Ahmed khan",
-        reason: "The source PDF lists Sir Syed Ahmed khan as the answer."
+        options: ["Sir Syed Ahmed Khan","Sir Syed Ahmed Khan","Gandhi","Allama Iqbal"],
+        correctAnswer: "Sir Syed Ahmed Khan",
+        reason: "The source PDF lists Sir Syed Ahmed Khan as the answer."
     },
     {
         question: "When was pak: sent first satellite in space?",
@@ -7394,9 +7394,9 @@ export const mcqsArray25: MCQ[] = [
     },
     {
         question: "Who is last recipient of Nishan Haider?",
-        options: ["15 July 1999 - Cargill War, Havaldar Lalak Jan,","Captain Raja Sarwar","Havaldar lalak Jan, karnal sher khan","Mount batin"],
-        correctAnswer: "15 July 1999 - Cargill War, Havaldar Lalak Jan,",
-        reason: "The source PDF lists 15 July 1999 - Cargill War, Havaldar Lalak Jan, as the answer."
+        options: ["Major Shabbir Sharif","Captain Raja Sarwar","Havaldar Lalak Jan","Mount batin"],
+        correctAnswer: "Major Shabbir Sharif",
+        reason: "The source PDF lists Major Shabbir Sharif as the answer."
     },
     {
         question: "When was Nemaz made obligatory?",
@@ -8126,7 +8126,7 @@ export const mcqsArray27: MCQ[] = [
     },
     {
         question: "Which is the largest fort of Pakistan?",
-        options: ["Raincoat fort in thatha","Hyderabad","Ranikot","Constructed in 1648 by the fifth Mughal Emperor Shah Jahan"],
+        options: ["Ranikot Fort","Hyderabad","Ranikot","Constructed in 1648 by the fifth Mughal Emperor Shah Jahan"],
         correctAnswer: "Hyderabad",
         reason: "The source PDF lists Hyderabad as the answer."
     },
@@ -8588,7 +8588,7 @@ export const mcqsArray29: MCQ[] = [
     },
     {
         question: "Messaq-e-Madina?",
-        options: ["Yasrab","622 Hijri","13th nabvi","13 nabvi, 622 AD"],
+        options: ["Yasrab","622 Hijri","622 CE","622 CE"],
         correctAnswer: "622 Hijri",
         reason: "The source PDF lists 622 Hijri as the answer."
     },
@@ -9035,7 +9035,7 @@ export const mcqsArray30: MCQ[] = [
     },
     {
         question: "Second prophet was?",
-        options: ["Hazrat Dawood As","571AD","13 nabvi, 622 AD","Sheesh (AS) 1564."],
+        options: ["Hazrat Dawood As","571AD","622 CE","Sheesh (AS) 1564."],
         correctAnswer: "Sheesh (AS) 1564.",
         reason: "The source PDF lists Sheesh (AS) 1564. as the answer."
     },
@@ -9392,7 +9392,7 @@ export const mcqsArray31: MCQ[] = [
     },
     {
         question: "Hayat e Javed is written by?",
-        options: ["Gandhi","Allama Iqbal","Altaf Hussain hali","Sir Sy d Ahmed Khan"],
+        options: ["Gandhi","Allama Iqbal","Altaf Hussain hali","Sir Syed Ahmed Khan"],
         correctAnswer: "Altaf Hussain hali",
         reason: "The source PDF lists Altaf Hussain hali as the answer."
     },
@@ -9527,7 +9527,7 @@ export const mcqsArray32: MCQ[] = [
     },
     {
         question: "1999 WC winner?",
-        options: ["Australia .2003.2007.1987","France","Havaldar lalak Jan, karnal sher khan","General Pervez Musharraf"],
+        options: ["Australia .2003.2007.1987","France","Havaldar Lalak Jan","General Pervez Musharraf"],
         correctAnswer: "Australia .2003.2007.1987",
         reason: "The source PDF lists Australia .2003.2007.1987 as the answer."
     },
