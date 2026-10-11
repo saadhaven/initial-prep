@@ -15,6 +15,8 @@
 - Keep changes focused and preserve existing public interfaces unless the task requires otherwise.
 - Use the existing App Router, metadata, and component patterns rather than introducing another framework or styling system.
 - Add or update tests when a suitable test setup exists; this project currently exposes lint and build scripts only.
+- Prefer the smallest focused validation that checks the changed behavior. Avoid unrelated exploration, repetitive checks, and other low-value work.
+- Run `pnpm build` once, after all requested implementation work is complete; do not use it for intermediate validation. Use a narrow check during implementation when one is available.
 
 
 # PMA Initial Prep — AGENTS.md
@@ -63,6 +65,14 @@ DO NOT manually rewrite existing questions.
 DO NOT modify existing question content unless explicitly requested.
 
 DO NOT generate fake questions to fill missing data.
+
+### Question Accuracy and Verification
+
+- A PDF, imported answer key, or existing `correctAnswer` is never proof that an answer is correct. Do not verify or justify MCQ answers from PDFs.
+- Independently verify factual answers against reliable non-PDF sources. Verify math, logic, and language questions by working through them directly.
+- Every MCQ must have exactly one defensible correct option, with `correctAnswer` matching that option exactly, and a concise `reason` that explains why it is correct. A source citation or a restatement that the answer key says so is not a reason.
+- Do not guess or publish an ambiguous, disputed, or time-sensitive answer without enough independent evidence. Clarify the question, add an explicit as-of date where appropriate, or flag it for review rather than presenting an uncertain key as fact.
+- When editing question data, check the affected questions for answer-option mismatches, missing or source-only reasons, ambiguity, and known factual errors. Do not claim a bank is fully verified unless every included answer has been checked independently.
 
 The application must import and consume the existing arrays.
 
