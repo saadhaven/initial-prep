@@ -34,7 +34,7 @@ function isAttemptSummary(value: unknown): value is AttemptSummary {
 
   return (
     typeof summary.id === "string" &&
-    (summary.testType === "verbal" || summary.testType === "non-verbal" || summary.testType === "academic") &&
+    (summary.testType === "verbal" || summary.testType === "non-verbal" || summary.testType === "academic" || summary.testType === "experience") &&
     typeof summary.moduleId === "string" &&
     numberFields.every((field) => typeof summary[field] === "number" && Number.isFinite(summary[field]))
   );

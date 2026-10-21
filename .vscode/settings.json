@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^python - <<'PY'\nfrom pathlib import Path\np = Path\\('data/academic-2\\.ts'\\)\ntext = p\\.read_text\\(\\)\nterms = \\[\n'Kabul and Indus','Peshawar\\\\'s summer capital','According to the PDF, who stopped the war in Gaza','Balighari','West Bank','first female astronaut','Senate members are allocated to Khyber Pakhtunkhwa','Liaquat Ali Khan first visit','Indus Waters Treaty','Ababeel missile','world\\\\'s most populated','Government of India Act 1935','National anthem first played','Which country was the 2023 Nobel Prize in Literature associated with','Pakistan\\\\'s first Constitution','Irmagan-e-Ajaz','commercial electricity','Pakistan\\\\'s first Constitution implemented','What place is listed as Pakistan\\\\'s lowest point','Who was Pakistan\\\\'s first female minister','How many Senate members are allocated to Khyber Pakhtunkhwa','Who was Pakistan\\\\'s first Chief Justice','What is the cost for a commercial consumer'\\]\nfor term in terms:\n    if term in text:\n        idx = text\\.index\\(term\\)\n        start=max\\(0, idx-250\\)\n        end=min\\(len\\(text\\), idx\\+500\\)\n        print\\('\\\\n--- TERM:', term, '---\\\\n'\\)\n        print\\(text\\[start:end\\]\\)\nPY$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

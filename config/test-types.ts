@@ -1,4 +1,4 @@
-export type TestTypeId = "verbal" | "non-verbal" | "academic";
+export type TestTypeId = "verbal" | "non-verbal" | "academic" | "experience";
 
 export const PASSING_SCORE_PERCENTAGE = 50;
 
@@ -34,6 +34,14 @@ export const TEST_TYPES = [
     questionCount: 50,
     durationMinutes: 30,
     description: "General knowledge and academic practice from the available question banks.",
+    availability: "ready",
+  },
+  {
+    id: "experience",
+    name: "Experience",
+    questionCount: 22,
+    durationMinutes: 30,
+    description: "Verbal practice drawn from reported PMA initial-test experiences.",
     availability: "ready",
   },
 ] as const satisfies readonly TestTypeConfig[];

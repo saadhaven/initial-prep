@@ -15,7 +15,7 @@ export default function TestsPage() {
             Select a track to view its modules and start a timed session.
           </p>
         </div>
-        <section aria-label="Available test types" className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
+        <section aria-label="Available test types" className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 xl:grid-cols-4">
           {TEST_TYPES.map((testType) => (
             <TestTypeCard key={testType.id} testType={testType} />
           ))}

@@ -1,0 +1,136 @@
+import type { MCQ } from "./mcq-rows";
+
+export const experienceQuestions: MCQ[] = [
+  {
+    question: "What is 90% of 90?",
+    options: ["81", "9", "90", "72"],
+    correctAnswer: "81",
+    reason: "90% of 90 is 0.9 × 90 = 81.",
+  },
+  {
+    question: "What is 5% of 80?",
+    options: ["4", "5", "8", "16"],
+    correctAnswer: "4",
+    reason: "5% of 80 is 0.05 × 80 = 4.",
+  },
+  {
+    question: "What is one-third of 120?",
+    options: ["40", "30", "60", "4"],
+    correctAnswer: "40",
+    reason: "120 divided by 3 is 40.",
+  },
+  {
+    question: "What is one-third of one-tenth of 90?",
+    options: ["3", "9", "30", "1"],
+    correctAnswer: "3",
+    reason: "One-tenth of 90 is 9, and one-third of 9 is 3.",
+  },
+  {
+    question: "A helicopter uses 60 gallons to travel 320 km. At the same rate, how many gallons does it use to travel 400 km?",
+    options: ["75 gallons", "60 gallons", "80 gallons", "90 gallons"],
+    correctAnswer: "75 gallons",
+    reason: "Fuel use is proportional to distance: 60 × 400 ÷ 320 = 75 gallons.",
+  },
+  {
+    question: "In a class of 1,500 students, 1,200 are present. What percentage is present?",
+    options: ["80%", "20%", "75%", "85%"],
+    correctAnswer: "80%",
+    reason: "1,200 ÷ 1,500 × 100 = 80%.",
+  },
+  {
+    question: "Five men write five pages in five minutes. At the same rate, how many pages can one man write in five minutes?",
+    options: ["1 page", "5 pages", "10 pages", "25 pages"],
+    correctAnswer: "1 page",
+    reason: "Each man writes one page during the five-minute period.",
+  },
+  {
+    question: "Evaluate 2 + 2 ÷ 2.",
+    options: ["3", "2", "4", "6"],
+    correctAnswer: "3",
+    reason: "Division comes first: 2 + (2 ÷ 2) = 2 + 1 = 3.",
+  },
+  {
+    question: "How many months have 31 days?",
+    options: ["7", "5", "6", "8"],
+    correctAnswer: "7",
+    reason: "January, March, May, July, August, October, and December have 31 days.",
+  },
+  {
+    question: "What is 4 factorial (4!)?",
+    options: ["24", "16", "12", "8"],
+    correctAnswer: "24",
+    reason: "4! = 4 × 3 × 2 × 1 = 24.",
+  },
+  {
+    question: "If iota denotes the imaginary unit i, what is its negative?",
+    options: ["−i", "i", "1", "−1"],
+    correctAnswer: "−i",
+    reason: "The additive inverse of i is −i.",
+  },
+  {
+    question: "What is i⁴, where i is the imaginary unit?",
+    options: ["1", "−1", "i", "−i"],
+    correctAnswer: "1",
+    reason: "Since i² = −1, i⁴ = (i²)² = (−1)² = 1.",
+  },
+  {
+    question: "If the 4th day of a month is Monday, what day is the 24th?",
+    options: ["Sunday", "Saturday", "Monday", "Tuesday"],
+    correctAnswer: "Sunday",
+    reason: "The 24th is 20 days after the 4th; 20 days later is six weekdays ahead, Sunday.",
+  },
+  {
+    question: "If the 1st day of a month is Sunday, what day is the 17th?",
+    options: ["Tuesday", "Monday", "Wednesday", "Thursday"],
+    correctAnswer: "Tuesday",
+    reason: "The 17th is 16 days after the 1st, or two weekdays beyond Sunday.",
+  },
+  {
+    question: "A person walks north, turns left, then turns right. Which direction are they facing?",
+    options: ["North", "South", "East", "West"],
+    correctAnswer: "North",
+    reason: "Facing north, a left turn points west; turning right from west points north.",
+  },
+  {
+    question: "What is the closest meaning of lucid?",
+    options: ["Clear", "Noisy", "Doubtful", "Complex"],
+    correctAnswer: "Clear",
+    reason: "Lucid means clear and easy to understand.",
+  },
+  {
+    question: "What is an antonym of wild?",
+    options: ["Tame", "Feral", "Untamed", "Wilderness"],
+    correctAnswer: "Tame",
+    reason: "Tame is the opposite of wild in the sense of being domesticated or controlled.",
+  },
+  {
+    question: "Why is milk boiled before drinking?",
+    options: ["To kill harmful microorganisms", "To add vitamins", "To remove all water", "To make it sour"],
+    correctAnswer: "To kill harmful microorganisms",
+    reason: "Heating milk to a boil kills many disease-causing microorganisms.",
+  },
+  {
+    question: "Why do parents send their children to school?",
+    options: ["For education and learning", "For medical treatment", "For employment", "For shopping"],
+    correctAnswer: "For education and learning",
+    reason: "Schools provide structured education and support learning.",
+  },
+  {
+    question: "What is the last letter of BEAUTY?",
+    options: ["Y", "B", "T", "E"],
+    correctAnswer: "Y",
+    reason: "The final letter in BEAUTY is Y.",
+  },
+  {
+    question: "Rearrange PARDLEO to form the name of an animal.",
+    options: ["LEOPARD", "POLDER", "PAROLED", "DOPLARE"],
+    correctAnswer: "LEOPARD",
+    reason: "Rearranging the letters P, A, R, D, L, E, O spells LEOPARD.",
+  },
+  {
+    question: "Ali is 4 years old, and his sister is four times his age. How old is his sister?",
+    options: ["16 years", "8 years", "12 years", "20 years"],
+    correctAnswer: "16 years",
+    reason: "Four times Ali's age is 4 × 4 = 16 years.",
+  },
+];

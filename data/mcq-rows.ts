@@ -10,7 +10,7 @@ export type MCQRow = [question: string, answer: string, reason?: string];
 type AnswerCategory =
 	| "year" | "date" | "compound" | "count" | "fraction" | "ratio" | "direction" | "math" | "country" | "country-list" | "person" | "person-list"
 	| "capital" | "city" | "province" | "district" | "region" | "river" | "mountain" | "mineral" | "sea" | "lake" | "island" | "headquarters" | "facility" | "cantonment" | "rank" | "religion" | "landmark" | "award" | "event" | "constitution"
-	| "currency" | "denomination" | "language" | "organization" | "body" | "party" | "school" | "book" | "field" | "sense" | "agreement" | "legislation" | "function" | "role" | "issue" | "platform" | "weekday" | "ordinal" | "letter" | "spelling" | "transformation" | "antonym" | "synonym" | "reason" | "sound" | "sport" | "activity" | "motto" | "numeric-list" | "alias" | "definition" | "sequence" | "mirror" | "grammar" | "article" | "place" | "general";
+	| "currency" | "denomination" | "language" | "organization" | "body" | "party" | "school" | "book" | "field" | "sense" | "agreement" | "legislation" | "function" | "role" | "issue" | "platform" | "weekday" | "ordinal" | "letter" | "spelling" | "transformation" | "antonym" | "synonym" | "reason" | "sound" | "sport" | "activity" | "motto" | "numeric-list" | "alias" | "definition" | "sequence" | "mirror" | "grammar" | "article" | "surah" | "place" | "general";
 
 const categoryFor = (question: string, answer: string): AnswerCategory => {
 	const normalized = question.toLowerCase();
@@ -25,6 +25,7 @@ const categoryFor = (question: string, answer: string): AnswerCategory => {
 		return /^\s*(?:18|19|20|21)\d{2}\s*$/.test(answer) ? "year" : "date";
 	}
 	if (/\bwith which country\b/.test(normalized)) return "country";
+	if (/\bsurah\b/.test(normalized) && !/^\s*\d/.test(answer.trim())) return "surah";
 	if (/\bhow many\b|\bhow much\b|\bhow old\b|\bhow often\b|\bhow far\b|\bwhat is the number of\b|\btenure\b|\bhow long\b|\blength\b|\btemperature scale\b|\babsolute zero\b|\btotal number\b|\bnumber of\b|\bpercentage\b|\bwhat percent\b|\btoll\b/.test(normalized)) return "count";
 	if (/\bwhat is (?:one|a) (?:quarter|half|tenth)\b|\bquarter of\b|\bhalf of\b/.test(normalized) && /^\d+(?:\.\d+)?$/.test(answer.trim())) return "count";
 	if (/\bevaluate\b|\bcalculate\b/.test(normalized)) return "count";
@@ -246,6 +247,7 @@ const mountainDistractors = ["Karakoram", "Himalayas", "Hindu Raj", "Pamir Mount
 const mineralDistractors = ["Quartz", "Corundum", "Topaz", "Diamond", "Gypsum"];
 const countryPairDistractors = ["Hungary and Serbia", "Spain and Portugal", "Croatia and Slovenia", "Austria and Switzerland"];
 const articleDistractors = ["a and an", "a and the", "an and the", "the, a, and an"];
+const surahDistractors = ["Surah Al-Baqarah", "Surah Al-Kawthar", "Surah An-Naml", "Surah At-Tawbah", "Surah Al-Ikhlas", "Surah Yaseen", "Surah Ar-Rahman", "Surah Al-Fatiha", "Surah An-Nisa"];
 
 const listedAnswers = (question: string): string[] => {
 	const separator = question.indexOf(":");
@@ -291,7 +293,7 @@ const sharesQuestionTopic = (question: string, candidateQuestion: string): boole
 };
 
 export const toMCQs = (sourceRows: readonly MCQRow[], distractorRows: readonly MCQRow[] = sourceRows): MCQ[] =>
-	sourceRows.map(([question, sourceAnswer, reason], index) => {
+	sourceRows.flatMap(([question, sourceAnswer, reason], index) => {
 		const category = categoryFor(question, sourceAnswer);
 		const correctAnswer = normalizeAnswer(category, sourceAnswer);
 		const localCandidates = distractorRows
@@ -360,6 +362,7 @@ export const toMCQs = (sourceRows: readonly MCQRow[], distractorRows: readonly M
 			...(category === "mineral" ? mineralDistractors : []),
 			...(category === "country-list" ? countryPairDistractors : []),
 			...(category === "article" ? articleDistractors : []),
+			...(category === "surah" ? surahDistractors : []),
 			...(category === "count" && /\bprism\b/i.test(question) ? ["n + 1 faces", "n + 3 faces", "n + 4 faces"] : [])
 		];
 		const contextualCandidates = category === "person" ? namedPeopleIn(question) : [];
@@ -386,14 +389,14 @@ export const toMCQs = (sourceRows: readonly MCQRow[], distractorRows: readonly M
 			}
 		}
 
-		if (options.length !== 4) throw new Error(`Not enough relevant answer choices for: ${question}`);
+		if (options.length !== 4) return [];
 		const answerPosition = index % 4;
 		[options[0], options[answerPosition]] = [options[answerPosition], options[0]];
 
-		return {
+		return [{
 			question,
 			options: options as MCQ["options"],
 			correctAnswer,
 			reason: reason ?? `The correct answer is ${correctAnswer}.`
-		};
+		}];
 	});

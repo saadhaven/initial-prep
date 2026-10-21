@@ -1,6 +1,7 @@
 import * as academicPrimary from "@/data/academic";
 import * as academicAdditional from "@/data/academic-2";
 import * as english from "@/data/english";
+import { experienceQuestions } from "@/data/experience";
 import * as pakStudy from "@/data/pak-study";
 import * as verbal from "@/data/verbal";
 import type { TestTypeId } from "@/config/test-types";
@@ -92,9 +93,15 @@ const academicBanks = [
   ...readSourceBanks("english", english),
   ...readSourceBanks("pak-study", pakStudy),
 ];
+const experienceBank: QuestionSourceRecord[] = experienceQuestions.map((question, sourceIndex) => ({
+  sourceBankId: "experience/verbal",
+  sourceIndex,
+  question,
+}));
 
 export const QUESTION_BANKS = {
   verbal: flattenBanks(verbalBanks),
   "non-verbal": [],
   academic: flattenBanks(academicBanks),
+  experience: experienceBank,
 } satisfies Record<TestTypeId, readonly QuestionSourceRecord[]>;
